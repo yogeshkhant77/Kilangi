@@ -1648,15 +1648,14 @@ h1 span {
   .mobile-categories {
     display: block;
     background: #fff;
-    padding: 16px 20px;
+    padding: 16px 0;
   }
 
   .mobile-categories-container {
     display: flex;
     gap: 12px;
     overflow-x: auto;
-    padding-bottom: 8px;
-    padding-right: 12px;
+    padding: 0 16px 8px; /* match horizontal margin of search bar */
     justify-content: flex-start;
     scroll-snap-type: x mandatory;
   }
@@ -1855,20 +1854,26 @@ h1 span {
     display: block;
   }
 
-  /* Beige strip behind the search bar */
+  /* Beige strip behind the search bar – full width on mobile */
   .search-wrap {
     background: #e6cbbf;
-    padding: 12px 16px 16px;
-    margin-top: 72px; /* pushes it just below logo row */
+    padding: 12px 0 16px;
+    margin-top: 72px; /* keeps it just below logo row */
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
+  /* White search field centered with equal margins */
   .search {
     padding: 10px 14px;
     font-size: 14px;
-    margin-top: 0;
+    margin: 0 16px;
     background: #ffffff;
     border-radius: 24px;
     border: none;
+    width: calc(100% - 32px);
+    max-width: 100%;
   }
 
   .search input {
