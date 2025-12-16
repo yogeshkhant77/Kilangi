@@ -1858,10 +1858,8 @@ h1 span {
   .search-wrap {
     background: #e6cbbf;
     padding: 12px 0 16px;
-    margin-top: 72px; /* keeps it just below logo row */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 72px 0 0;   /* reset side margins from tablet styles */
+    width: 100%;        /* make banner stretch full device width */
   }
 
   /* White search field centered with equal margins */
