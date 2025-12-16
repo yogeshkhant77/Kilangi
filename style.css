@@ -4,7 +4,7 @@
   padding: 0;
 }
 
-/* Prevent accidental page-wide horizontal overflow while allowing inner containers to scroll */
+
 html, body {
   overflow-x: hidden;
 }
@@ -23,7 +23,7 @@ body {
   background: #fdfbf8;
 }
 
-/* ===== Page preloader (initial load animation) ===== */
+
 .preloader {
   position: fixed;
   inset: 0;
@@ -64,13 +64,13 @@ body {
   }
 }
 
-/* When the page is ready, fade the preloader away */
+
 body.preload-done .preloader {
   opacity: 0;
   visibility: hidden;
 }
 
-/* Soft fade-in for main content to avoid harsh pop-in */
+
 body:not(.preload-done) header,
 body:not(.preload-done) main,
 body:not(.preload-done) section,
@@ -88,7 +88,7 @@ body.preload-done footer {
   transition: opacity 420ms ease, transform 420ms ease;
 }
 
-/* Wrapper around the search so we can tint only that band on mobile */
+
 .search-wrap {
   width: 100%;
 }

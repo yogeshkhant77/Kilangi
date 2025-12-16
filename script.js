@@ -85,7 +85,6 @@ if (filterPills.length) {
   );
 }
 
-// Swatch color variant switcher
 const swatches = document.querySelectorAll(".swatch");
 swatches.forEach((swatch) => {
   swatch.addEventListener("click", (e) => {
@@ -96,13 +95,10 @@ swatches.forEach((swatch) => {
       .querySelector(".product-image img");
     const variant = swatch.dataset.variant;
 
-    // Remove active from all swatches in this group
     allSwatches.forEach((s) => s.classList.remove("active"));
 
-    // Add active to clicked swatch
     swatch.classList.add("active");
 
-    // Change image with smooth transition
     if (productImage) {
       const imageSrc = productImage.dataset[variant];
       if (imageSrc) {
@@ -118,9 +114,7 @@ swatches.forEach((swatch) => {
 
 toggleClearButton();
 
-/* Scroll-reveal: add `in-view` to elements with .animate-on-scroll when visible */
 document.addEventListener("DOMContentLoaded", () => {
-  // Auto-attach animate-on-scroll to major sections if not present
   const autoSelectors = [
     ".hero-content",
     ".bestseller",
@@ -136,13 +130,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Add stagger class to elements that would benefit from child staggering
   const staggerTargets = document.querySelectorAll(
     ".features-grid, .benefit-cards, .testimonials-grid, .product-grid"
   );
   staggerTargets.forEach((t) => t.classList.add("animate-stagger"));
 
-  // Small polish: give the first primary CTA a shimmer effect
   const primary = document.querySelector(".cta");
   if (primary) primary.classList.add("shimmer");
 
@@ -153,7 +145,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (entry.isIntersecting) {
           el.classList.add("in-view");
 
-          // If staggered, set incremental delays on children
           if (el.classList.contains("animate-stagger")) {
             Array.from(el.children).forEach((child, i) => {
               const delay = i * 80; // ms
@@ -161,7 +152,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
           }
 
-          // If you only want the animation once, unobserve
           observer.unobserve(el);
         }
       });
@@ -175,7 +165,6 @@ document.addEventListener("DOMContentLoaded", () => {
       observer.observe(el);
     });
 
-  // Mark preload complete so the preloader can fade out smoothly
   window.setTimeout(() => {
     document.body.classList.add("preload-done");
   }, 250);
